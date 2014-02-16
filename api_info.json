@@ -1,0 +1,17 @@
+[
+    {
+        "service":"flickr",
+        "url":"http://api.flickr.com/services/rest/?method=flickr.photos.search&sort=interestingness-desc&radius=10&radius_units=mi&per_page=8&format=json&jsoncallback=JSON_CALLBACK",
+        "request_parameters": {
+            "api_key":"76f8d3b17097b8211ec53991e7e3513e",
+            "sort":"interestingness-desc",
+            "radius":"10",
+            "radius_units":"mi",
+            "per_page":"8",
+            "format":"json",
+            "nojsoncallback":"1"
+        },
+        "latitude":"lat",
+        "longitude":"lon"
+    }
+]
