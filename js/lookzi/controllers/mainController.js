@@ -20,7 +20,7 @@ app.controller("mainController", ['$scope', 'GeolocationService', '$http', 'APII
                 apiName = $scope.data[i].service;
                 $http({method: 'GET', url: 'php/' + apiName + ".php?latitude=" + position.coords.latitude + "&longitude=" + position.coords.longitude})
                     .success(function (data) {
-                        $scope.items = data;
+                        $scope.items.push.apply($scope.items, data);
                     })
                     .error(function (error) {
                     });

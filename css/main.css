@@ -1,9 +1,14 @@
 body {
    background-color: #f5f5f5;
    font-family: monaco, futura, tahoma, arial, sans-serif;
+   padding-left: 12px;
 }
 h1, h2, h3 {
     font-family: monaco, futura, tahoma, arial, sans-serif;
+}
+
+ul {
+    margin: 0;
 }
 a {
     color: #660000;
@@ -12,7 +17,7 @@ a {
     width: 100%;
 }
 .main-frame {
-    min-width: 34%;
+    min-width: 22em;
     max-width: 33em;
 }
 li {
@@ -37,7 +42,7 @@ li:last-child {
 }
 #logo {
     display: block;
-    min-width: 34%;
+    min-width: 22em;
     margin: 0 auto;
     max-width: 33em;
     text-align: center;

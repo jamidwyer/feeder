@@ -19,14 +19,14 @@
 		<div class="search-box row-fluid form-inline"></div>
         <div class="results-top"></div>
         <div class="results-container">
-            <ul class="episode-list">
+            <ul>
                 <li ng-repeat="item in items">
                     <div class="avatar-container">
                         {{item.avatar}}
                     </div>
                     <div class="item-content-container">
                         <div><a href="{{item.url}}">{{item.title}}</a></div>
-                        <div><img src="{{item.image}}" /></div>
+                        <div ng-show="item.image"><img src="{{item.image}}" /></div>
                         <div>{{item.time}}</div>
                         <div>{{item.address}}</div>
                         <div>{{item.text}}</div>
