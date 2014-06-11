@@ -2,7 +2,7 @@ app.controller("mainController", ['$scope', 'GeolocationService', '$http', 'APII
     //everything assigned to $scope is available within the div controlled by mainController (in this case, main-frame)
     $scope.items = [];
     $scope.position = null;
-    $scope.message = "Determining gelocation...";
+    $scope.message = "Determining geolocation...";
     $scope.init = function () {
         geolocation().then(function (position) {
             $scope.data = api_info.getData();

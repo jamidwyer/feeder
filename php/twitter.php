@@ -19,7 +19,9 @@
             $result = new StdClass();
             $result->avatar = ""; 
             $result->title = ""; 
-            $result->image = $item->entities->media[0]->media_url;
+            if (isset($item->entities->media)) {
+                $result->image = $item->entities->media[0]->media_url;
+            }
             $result->text = $item->text;
             $result->url = "https://twitter.com/".$item->user->screen_name."/status/".$item->id_str;
             array_push($array, $result);
