@@ -14,3 +14,5 @@ For a working app, you'll need a keys.php file in the php directory, like this:
         )
     );
 ?>
+
+This is a gradual refactor of http://lookzi.com. You can see this code in action at: http://jamidwyer.com/geolocation_apis_angular/.
