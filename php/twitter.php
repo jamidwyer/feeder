@@ -4,7 +4,7 @@
     $settings = $keys['twitter'];
 
 	$url = 'https://api.twitter.com/1.1/search/tweets.json';
-	$getfield = '?geocode=45.4962399,-122.60985289999999,100km';
+	$getfield = '?geocode='.$_GET['latitude'].','.$_GET['longitude'].',100km';
 	$requestMethod = 'GET';
 	$twitter = new TwitterAPIExchange($settings);
 	$json = $twitter->setGetfield($getfield)
