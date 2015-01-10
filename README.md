@@ -1,9 +1,10 @@
 lookzi
 ======
-Basic geolocation and API functionality with AngularJS.
-For a working app, you'll need a keys.php file in the php directory, like this: 
+Start on grabbing various social media feeds by username with JS and PHP. Currently totally does not do that, so I apologize if you ended up here for that.
 
-<?php 
+When it does work, you'll need a keys.php file in the php directory, like this: 
+
+<?php
     $keys = array(
         "flickr" =>"YOUR FLICKR API KEY GOES HERE", 
         "twitter" => array(
@@ -14,5 +15,3 @@ For a working app, you'll need a keys.php file in the php directory, like this:
         )
     );
 ?>
-
-This is a gradual refactor of http://jamidwyer.com/near. You can see this code in action at: http://jamidwyer.com/geolocation_apis_angular/.
