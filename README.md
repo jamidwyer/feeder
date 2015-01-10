@@ -1,4 +1,4 @@
-lookzi
+feeder
 ======
 Start on grabbing various social media feeds by username with JS and PHP. Currently totally does not do that, so I apologize if you ended up here for that.
 
