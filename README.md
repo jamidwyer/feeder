@@ -1,6 +1,6 @@
 feeder
 ======
-PHP to aggregate various social media feeds, so you can hit getsocialfeeds.php with an AJAX call (or cron) and show/save the content as you like. Currently totally does not do that, so I apologize if you ended up here for that.
+PHP to aggregate various social media feeds, so you can hit getsocial.php with an AJAX call (or cron) and show/save the content as you like. Currently totally does not do that, so I apologize if you ended up here for that.
 
 When it does work, you'll need a keys.php file in this directory, like this: 
 
