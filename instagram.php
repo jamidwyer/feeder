@@ -1,12 +1,11 @@
 <?php
     include('keys.php');
-    include('utils.php');
-    $key = $keys['flickr'];
+    $key = $keys['instagram'];
     $url = 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key='.$key.'&sort=interestingness-desc&lat='.$_GET['latitude'].'&lon='.$_GET['longitude'].'&radius=10&radius_units=mi&per_page=8&format=json&nojsoncallback=1';
     $results = CURL_file_get_contents($url);
-    format_data($results);
+    format_instagram_data($results);
 
-    function format_data($results) {
+    function format_instagram_data($results) {
         $json = json_decode($results);
         $array = array();
         foreach($json->photos->photo as $item) {

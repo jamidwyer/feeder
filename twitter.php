@@ -3,19 +3,20 @@
 	require_once('TwitterAPIExchange.php');
     $settings = $keys['twitter'];
 
-	$url = 'https://api.twitter.com/1.1/search/tweets.json';
-	$getfield = '?geocode='.$_GET['latitude'].','.$_GET['longitude'].',100km';
+	$url = 'https://api.twitter.com/1.1/statuses/user_timeline.json';
+	$getfield = '?screen_name=marcatcaffelli';
 	$requestMethod = 'GET';
 	$twitter = new TwitterAPIExchange($settings);
 	$json = $twitter->setGetfield($getfield)
 				 ->buildOauth($url, $requestMethod)
 				 ->performRequest();
-    format_data($json);
+    $twitter = format_twitter_data($json);
 
-    function format_data($results) {
+    function format_twitter_data($results) {
         $json = json_decode($results);
         $array = array();
-        foreach($json->statuses as $item) {
+
+        foreach($json as $item) {
             $result = new StdClass();
             $result->avatar = ""; 
             $result->title = ""; 
@@ -23,11 +24,12 @@
                 $result->image = $item->entities->media[0]->media_url;
             }
             $result->text = $item->text;
+            $result->author = $item->user->screen_name;
+            $date = date_format(new DateTime($item->created_at), 'Y-m-d H:i:s');
+            $result->date = $date;
             $result->url = "https://twitter.com/".$item->user->screen_name."/status/".$item->id_str;
             array_push($array, $result);
         }
-        $results = json_encode($array);
-        $formatted=$results;
-        echo $formatted;
+        return $array;
     }
 ?>
