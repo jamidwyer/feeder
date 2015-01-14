@@ -14,6 +14,7 @@
                 $result = new StdClass();
                 $result->text = $item->message; 
                 $result->image = $item->picture;
+                $result->source = "facebook";
                 $date = date_format(new DateTime($item->created_time), 'Y-m-d H:i:s');
                 $result->date = $date;
                 $result->author = $item->from->name;

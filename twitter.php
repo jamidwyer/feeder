@@ -17,8 +17,10 @@
         $array = array();
 
         foreach($json as $item) {
+            if (!isset($item->in_reply_to_screen_name) || $item->in_reply_to_screen_name === "") {
             $result = new StdClass();
             $result->avatar = ""; 
+            $result->source = "twitter";
             $result->title = ""; 
             if (isset($item->entities->media)) {
                 $result->image = $item->entities->media[0]->media_url;
@@ -29,6 +31,7 @@
             $result->date = $date;
             $result->url = "https://twitter.com/".$item->user->screen_name."/status/".$item->id_str;
             array_push($array, $result);
+            }
         }
         return $array;
     }

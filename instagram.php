@@ -11,6 +11,7 @@
         foreach($json->photos->photo as $item) {
             $result = new StdClass();
             $result->title = $item->title; 
+            $result->source = "instagram";
             $result->image = "http://farm2.static.flickr.com/".$item->server."/".$item->id."_".$item->secret.".jpg";
             $result->text = "";
             $result->url = "http://www.flickr.com/photos/".$item->owner+"/".$item->id;
