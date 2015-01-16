@@ -1,4 +1,5 @@
 <?php
+    date_default_timezone_set('America/Los_Angeles');
     include('keys.php');
     include('utils.php');
     $key = $keys['facebook'];
@@ -14,6 +15,10 @@
                 $result = new StdClass();
                 $result->text = $item->message; 
                 $result->image = $item->picture;
+                $imagebits = explode("url=", $item->picture);
+                if (isset($imagebits[1])) {
+                    $result->image = urldecode($imagebits[1]);
+                }
                 $result->source = "facebook";
                 $date = date_format(new DateTime($item->created_time), 'Y-m-d H:i:s');
                 $result->date = $date;

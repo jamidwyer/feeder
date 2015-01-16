@@ -16,3 +16,15 @@ When it does work, you'll need a keys.php file in this directory, like this:
         )
     );
 ?>
+
+
+To consume this data with jQuery, you can do something like:
+function fetchSocial() {
+    $.ajax({
+      url: "../php/feeder/getsocial.php",
+      context: document.body
+    }).done(function(data) {
+        var json = JSON.parse(data);
+    });
+}
+

@@ -1,4 +1,5 @@
 <?php
+    date_default_timezone_set('America/Los_Angeles');
     include('keys.php');
     $key = $keys['instagram'];
     $url = 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key='.$key.'&sort=interestingness-desc&lat='.$_GET['latitude'].'&lon='.$_GET['longitude'].'&radius=10&radius_units=mi&per_page=8&format=json&nojsoncallback=1';

@@ -1,4 +1,5 @@
 <?php
+    date_default_timezone_set('America/Los_Angeles');
 	$feed = implode(file('http://caffelli.com/rss.xml'));
     $search = array('&ldquo;', '&rdquo;', '“', '”', '’', '—');
     $replace = array('"', '"', '"', '"', '\'', '--');
@@ -18,8 +19,9 @@
                 $result->text = $item['description'];
 				$p1start = strpos($result->text, '<p>');
 				$p2start = strpos($result->text, '<p>', $p1start+4);
-				$p2end = strpos($result->text, '</p>', $p2start);
-				$paragraph = substr($result->text, $p1start, $p2end-$p1start+4);
+                $p3start = strpos($result->text, '<p>', $p2start+4);
+				$p3end = strpos($result->text, '</p>', $p3start);
+				$paragraph = substr($result->text, $p1start, $p3end-$p1start+4);
 				$result->text = utf8_encode($paragraph);
                 $result->source = "blog";
                 $date = date_format(new DateTime($item['pubDate']), 'Y-m-d H:i:s');
