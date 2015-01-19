@@ -19,6 +19,7 @@
                 if (isset($imagebits[1])) {
                     $result->image = urldecode($imagebits[1]);
                 }
+                    if ($isweird <= 9) {
                 $result->source = "facebook";
                 $date = date_format(new DateTime($item->created_time), 'Y-m-d H:i:s');
                 $result->date = $date;
