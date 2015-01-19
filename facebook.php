@@ -16,9 +16,20 @@
                 $result->text = $item->message; 
                 $result->image = $item->picture;
                 $imagebits = explode("url=", $item->picture);
+                $explodeb = explode("_b.jpg", $item->picture);
                 if (isset($imagebits[1])) {
                     $result->image = urldecode($imagebits[1]);
                 }
+                else {
+                    $bits  = explode("/", $result->image);
+                    $moarbits = explode("_", $bits[count($bits)-1]);
+                    $id = $moarbits[1];
+                    $isweird = count($moarbits);
+                    if ($isweird <= 9) {
+                        $result->image = "http://graph.facebook.com/".$id."/picture";
+                    }
+                }
+//                echo "<img src=".$result->image." />";
                 $result->source = "facebook";
                 $date = date_format(new DateTime($item->created_time), 'Y-m-d H:i:s');
                 $result->date = $date;
