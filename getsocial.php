@@ -1,8 +1,9 @@
 <?php
 include('facebook.php');
 include('twitter.php');
-include('rss.php');
+include('atom.php');
 //include('instagram.php');
+//print_r($blog);
 $union = array_merge($facebook, $twitter);
 $union = array_merge($union, $blog);
 usort($union, "cmp");
