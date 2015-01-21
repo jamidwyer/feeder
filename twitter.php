@@ -30,7 +30,7 @@
             $result->author = $item->user->screen_name;
             $date = date_format(new DateTime($item->created_at), 'Y-m-d H:i:s');
             $result->date = $date;
-            $result->url = "https://twitter.com/".$item->user->screen_name."/status/".$item->id_str;
+            $result->link = "https://twitter.com/".$item->user->screen_name."/status/".$item->id_str;
             array_push($array, $result);
             }
         }

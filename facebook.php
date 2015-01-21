@@ -34,6 +34,7 @@
                 $date = date_format(new DateTime($item->created_time), 'Y-m-d H:i:s');
                 $result->date = $date;
                 $result->author = $item->from->name;
+                $result->link = $item->link;
                 array_push($array, $result);
             }
         }
