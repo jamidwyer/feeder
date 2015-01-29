@@ -29,7 +29,6 @@
                         $result->image = "http://graph.facebook.com/".$id."/picture";
                     }
                 }
-//                echo "<img src=".$result->image." />";
                 $result->source = "facebook";
                 $date = date_format(new DateTime($item->created_time), 'Y-m-d H:i:s');
                 $result->date = $date;

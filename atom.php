@@ -40,8 +40,11 @@ $feed = new DOMDocument();
 
 				$p1start = strpos($result->text, '<p>');
 				$p2start = strpos($result->text, '<p>', $p1start+4);
-				$p2end = strpos($result->text, '</p>', $p2start);
-				$paragraph = substr($result->text, $p1start, $p2end-$p1start+4);
+                $p3start = strpos($result->text, '<p>', $p2start+4);
+                $p4start = strpos($result->text, '<p>', $p3start+4);
+				$p4end = strpos($result->text, '</p>', $p4start);
+				$paragraph = substr($result->text, $p1start, $p4end-$p1start+4);
+
                 $search = array('&ldquo;', '&rdquo;', '“', '”', '’', '—', '—');
                 $replace = array('"', '"', '"', '"', '\'', '--', '');
                 $paragraph = str_replace($search, $replace, $paragraph);
